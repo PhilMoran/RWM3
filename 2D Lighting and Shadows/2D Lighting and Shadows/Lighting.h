@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_image.h>
 class Lighting
 {
 public:
@@ -17,11 +18,13 @@ public:
 	void Update();
 
 	//And add this to game.render after rendering all other game objects
-	void Render();
+	void Render(SDL_Renderer *render);
 
 
 
 private:
+	SDL_Surface* light;
+	SDL_Texture* lightTexture;
 
 };
 

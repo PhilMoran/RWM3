@@ -1,6 +1,6 @@
 #pragma once
 #include <SDL.h>
-
+#include "Lighting.h"
 //#include <SDL_image.h>
 
 
@@ -16,6 +16,6 @@ public:
 	void Update();
 	void Render();
 	void CleanUp();
-
+	Lighting* light = new Lighting();
 	bool IsRunning();
 };

@@ -70,15 +70,15 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\gameuser\Desktop\RWM3-Light&amp;Shadows\2D Lighting and Shadows\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\gameuser\Desktop\RWM3-Light&amp;Shadows\2D Lighting and Shadows\SDL2-2.0.6\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\gameuser\Desktop\RWM3\2D Lighting and Shadows\SDL2-2.0.6\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\gameuser\Desktop\RWM3\2D Lighting and Shadows\SDL2-2.0.6\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\gameuser\Desktop\RWM3-Light&amp;Shadows\2D Lighting and Shadows\SDL2-2.0.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\gameuser\Desktop\RWM3\2D Lighting and Shadows\SDL2-2.0.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;SDL2main.lib;SDL2test.lib;%(AdditionalDependencies)</AdditionalDependencies>
