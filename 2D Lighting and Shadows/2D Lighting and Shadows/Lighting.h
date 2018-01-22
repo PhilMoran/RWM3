@@ -1,6 +1,7 @@
 #pragma once
 #include <SDL.h>
 #include <SDL_image.h>
+#include <iostream>
 class Lighting
 {
 public:
@@ -9,8 +10,9 @@ public:
 	void init(SDL_Renderer *render);
 
 	//Places the light in the scene with a custom position intensity and color
-	void DisplayLight(int intensity, SDL_Color color, int x, int y);
+	void DisplayLight(int intensity,int red,int green,int blue);
 
+	void Surface(SDL_Texture* tex);
 	//Displays shadows in the scene with gameObjects that are passed in.
 	void CastShadows();//Pass GameObjects
 
@@ -18,13 +20,19 @@ public:
 	void Update();
 
 	//And add this to game.render after rendering all other game objects
-	void Render(SDL_Renderer *render);
+	void Render(SDL_Renderer *render,int x, int y, int w, int h);
 
-
+	int r = 255;
+	int g = 255;
+	int b = 255;
 
 private:
 	SDL_Surface* light;
-	SDL_Texture* lightTexture;
+	SDL_Texture* lightTex;
+	SDL_Surface* intense;
+	SDL_Texture* intenseTex;
+	
+	SDL_Rect* rect = new SDL_Rect();
 
 };
 

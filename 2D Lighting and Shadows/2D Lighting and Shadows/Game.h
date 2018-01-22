@@ -1,6 +1,8 @@
 #pragma once
 #include <SDL.h>
 #include "Lighting.h"
+#include <string>
+#include <Box2D\Box2D.h>
 //#include <SDL_image.h>
 
 
@@ -16,6 +18,9 @@ public:
 	void Update();
 	void Render();
 	void CleanUp();
+	int newR = 255;
 	Lighting* light = new Lighting();
 	bool IsRunning();
+	SDL_Surface* background;
+	SDL_Texture* backgroundTex;
 };
