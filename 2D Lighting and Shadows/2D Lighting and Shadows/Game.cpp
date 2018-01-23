@@ -7,9 +7,16 @@ void Game::Initialize()
 	window = SDL_CreateWindow("An SDL2 window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	background = SDL_LoadBMP("images/Background.bmp");
+	gameObject = SDL_LoadBMP("images/box.bmp");
 	backgroundTex = SDL_CreateTextureFromSurface(renderer, background);
+	gameObjectTex = SDL_CreateTextureFromSurface(renderer, gameObject);
 	isRunning = true;
 	light->init(renderer);
+
+	gameObjectRect.x = 200;
+	gameObjectRect.y = 400;
+	gameObjectRect.w = 100;
+	gameObjectRect.h = 100;
 }
 
 void Game::HandleEvents()
@@ -31,9 +38,10 @@ void Game::Render()
 	// clear the screen
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, backgroundTex, 0, 0);
-	light->DisplayLight(-1,0,255,255);
+	SDL_RenderCopy(renderer, gameObjectTex, 0, &gameObjectRect);
+	light->DisplayLight(-1,255,255,255);
 	light->Surface(backgroundTex);
-	
+	light->CastShadows(renderer, &gameObjectRect);
 	light->Render(renderer,100,30,100,100);
 	
 	// flip the backbuffer

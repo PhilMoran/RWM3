@@ -23,4 +23,9 @@ public:
 	bool IsRunning();
 	SDL_Surface* background;
 	SDL_Texture* backgroundTex;
+	SDL_Surface* gameObject;
+	SDL_Texture* gameObjectTex;
+	SDL_Rect gameObjectRect;
+
+
 };
