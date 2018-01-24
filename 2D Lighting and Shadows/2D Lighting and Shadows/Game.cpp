@@ -17,6 +17,8 @@ void Game::Initialize()
 	gameObjectRect.y = 400;
 	gameObjectRect.w = 100;
 	gameObjectRect.h = 100;
+
+
 }
 
 void Game::HandleEvents()
@@ -28,7 +30,7 @@ void Game::HandleEvents()
 		{
 			isRunning = false;
 		}
-	
+		
 	}
 
 }
@@ -36,14 +38,17 @@ void Game::HandleEvents()
 void Game::Render()
 {
 	// clear the screen
+	gameObjectRect.x++;
+	gameObjectRect.y--;
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, backgroundTex, 0, 0);
 	SDL_RenderCopy(renderer, gameObjectTex, 0, &gameObjectRect);
-	light->DisplayLight(-1,255,255,255);
+	light->LightSettings(3,255,255,255);
 	light->Surface(backgroundTex);
-	light->CastShadows(renderer, &gameObjectRect);
-	light->Render(renderer,100,30,100,100);
+
+	light->Render(renderer,200,30,100,100);
 	
+	light->CastShadows(renderer, &gameObjectRect);
 	// flip the backbuffer
 	// this means that everything that we prepared behind the screens is actually shown
 	SDL_RenderPresent(renderer);
