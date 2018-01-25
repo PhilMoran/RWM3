@@ -2,23 +2,23 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include <iostream>
-#include <Box2D\Box2D.h>
 class Lighting
 {
 public:
 	Lighting();
 	~Lighting();
 
-	void init(SDL_Renderer *render);
+	void init(SDL_Renderer *render, char c[100]);
 
 	//Places the light in the scene with a custom position intensity and color
 	void LightSettings(int intensity,int red,int green,int blue);
 
 	void Surface(SDL_Texture* tex);
 	//Displays shadows in the scene with gameObjects that are passed in.
-	void CastShadows(SDL_Renderer * render, SDL_Rect* gameObjects);//Pass GameObjects
+	void CircleLight(SDL_Renderer * render, SDL_Rect gameObjects[],int range);//Pass GameObjects
+	void PointLight(SDL_Renderer * render, SDL_Rect gameObjects[], int range,double pointAngle);//Pass GameObjects
 
-	void Raycast(SDL_Rect gameObjects);
+
 	//Add this to game.update
 	void Update();
 

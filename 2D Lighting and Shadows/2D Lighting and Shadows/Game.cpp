@@ -11,14 +11,35 @@ void Game::Initialize()
 	backgroundTex = SDL_CreateTextureFromSurface(renderer, background);
 	gameObjectTex = SDL_CreateTextureFromSurface(renderer, gameObject);
 	isRunning = true;
-	light->init(renderer);
+	light->init(renderer,"images/lighting.bmp");
+	lightNew->init(renderer, "images/lighting.bmp");
 
 	gameObjectRect.x = 200;
 	gameObjectRect.y = 400;
 	gameObjectRect.w = 100;
 	gameObjectRect.h = 100;
+	gameObjects[0] = gameObjectRect;
+
+	gameObjectRect1.x = 200;
+	gameObjectRect1.y = 400;
+	gameObjectRect1.w = 100;
+	gameObjectRect1.h = 100;
+	gameObjects[1] = gameObjectRect1;
+
+	gameObjectRect2.x = 200;
+	gameObjectRect2.y = 400;
+	gameObjectRect2.w = 100;
+	gameObjectRect2.h = 100;
+	gameObjects[2] = gameObjectRect2;
 
 
+	gameObjectRect3.x = 200;
+	gameObjectRect3.y = 400;
+	gameObjectRect3.w = 100;
+	gameObjectRect3.h = 100;
+	gameObjects[3] = gameObjectRect3;
+
+	
 }
 
 void Game::HandleEvents()
@@ -30,25 +51,33 @@ void Game::HandleEvents()
 		{
 			isRunning = false;
 		}
-		
 	}
 
 }
 
 void Game::Render()
 {
-	// clear the screen
-	gameObjectRect.x++;
-	gameObjectRect.y--;
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, backgroundTex, 0, 0);
-	SDL_RenderCopy(renderer, gameObjectTex, 0, &gameObjectRect);
-	light->LightSettings(3,255,255,255);
-	light->Surface(backgroundTex);
 
-	light->Render(renderer,200,30,100,100);
+	light->CircleLight(renderer, &gameObjects[index],400);
+	light->LightSettings(25, 255, 255, 255);
+	light->Surface(backgroundTex);
+	light->Render(renderer, 200, 30, 100, 100);
+
+	lightNew->PointLight(renderer, &gameObjects[index], 500,0.2);
+	lightNew->LightSettings(25, 255, 255, 255);
+	lightNew->Render(renderer, 200, 30, 100, 100);
+
+	for (int i = 0; i < 5; i++)
+	{
+		SDL_RenderCopy(renderer, gameObjectTex, 0, &gameObjects[i]);
+	}
+	// clear the screen
+	gameObjects[0].x++;
+	gameObjects[1].y--;
 	
-	light->CastShadows(renderer, &gameObjectRect);
+	gameObjects[2].y++;
 	// flip the backbuffer
 	// this means that everything that we prepared behind the screens is actually shown
 	SDL_RenderPresent(renderer);
@@ -63,6 +92,7 @@ void Game::Update()
 
 void Game::CleanUp()
 {
+	Render();
 }
 
 
