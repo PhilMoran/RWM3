@@ -1,5 +1,8 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (2D Lighting and Shadows.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Game.cpp
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\game.h(37): warning C4200: nonstandard extension used: zero-sized array in struct/union
-  c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\game.h(37): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
-  2D Lighting and Shadows.vcxproj -> C:\Users\gameuser\Desktop\RWM3\2D Lighting and Shadows\Debug\DEMO 2D Lighting and Shadows.exe
+c:\users\phillip\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\game.h(39): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\phillip\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\game.h(39): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+c:\users\phillip\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\game.h(23): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\phillip\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\game.cpp(120): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\phillip\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\game.cpp(128): warning C4305: '+=': truncation from 'double' to 'float'
+  2D Lighting and Shadows.vcxproj -> C:\Users\Phillip\Desktop\RWM3\2D Lighting and Shadows\Debug\DEMO 2D Lighting and Shadows.exe

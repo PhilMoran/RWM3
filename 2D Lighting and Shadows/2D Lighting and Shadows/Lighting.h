@@ -15,8 +15,8 @@ public:
 
 	void Surface(SDL_Texture* tex);
 	//Displays shadows in the scene with gameObjects that are passed in.
-	void CircleLight(SDL_Renderer * render, SDL_Rect gameObjects[],int range);//Pass GameObjects
-	void PointLight(SDL_Renderer * render, SDL_Rect gameObjects[], int range,double pointAngle);//Pass GameObjects
+	void CircleLight(SDL_Renderer * render, SDL_Rect gameObjects[],int range,int noOfObjects);//Pass GameObjects
+	void PointLight(SDL_Renderer * render, SDL_Rect gameObjects[], int range, int noOfObjects,double pointAngle);//Pass GameObjects
 
 
 	//Add this to game.update
@@ -25,6 +25,14 @@ public:
 	//And add this to game.render after rendering all other game objects
 	void Render(SDL_Renderer *render,int x, int y, int w, int h);
 
+	
+private:
+	SDL_Surface* light;
+	SDL_Texture* lightTex;
+	SDL_Surface* intense;
+	SDL_Texture* intenseTex;
+	double angle;
+	SDL_Rect* rect = new SDL_Rect();
 	int r = 255;
 	int g = 255;
 	int b = 255;
@@ -34,13 +42,6 @@ public:
 	int endX;
 	int endY;
 	int i;
-private:
-	SDL_Surface* light;
-	SDL_Texture* lightTex;
-	SDL_Surface* intense;
-	SDL_Texture* intenseTex;
-	double angle;
-	SDL_Rect* rect = new SDL_Rect();
 
 };
 

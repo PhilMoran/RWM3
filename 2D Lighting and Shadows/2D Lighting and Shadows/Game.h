@@ -19,6 +19,8 @@ public:
 	void Render();
 	void CleanUp();
 	int newR = 255;
+	int range = 500;
+	float angleLighting = 0.2;
 	int testIntensity = 25;
 	int red = 255;
 	int green = 255;

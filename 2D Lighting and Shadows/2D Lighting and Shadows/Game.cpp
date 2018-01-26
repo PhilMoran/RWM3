@@ -33,11 +33,6 @@ void Game::Initialize()
 	gameObjects[2] = gameObjectRect2;
 
 
-	gameObjectRect3.x = 200;
-	gameObjectRect3.y = 400;
-	gameObjectRect3.w = 100;
-	gameObjectRect3.h = 100;
-	gameObjects[3] = gameObjectRect3;
 
 	
 }
@@ -53,19 +48,19 @@ void Game::HandleEvents()
 		}
 		if (event.key.keysym.sym == SDLK_a)
 		{
-			gameObjects[3].x -= 2;
+			gameObjects[2].x -= 2;
 		}
 		if (event.key.keysym.sym == SDLK_s)
 		{
-			gameObjects[3].y += 2;
+			gameObjects[2].y += 2;
 		}
 		if (event.key.keysym.sym == SDLK_d)
 		{
-			gameObjects[3].x += 2;
+			gameObjects[2].x += 2;
 		}
 		if (event.key.keysym.sym == SDLK_w)
 		{
-			gameObjects[3].y -= 2;
+			gameObjects[2].y -= 2;
 		}
 		if (event.key.keysym.sym == SDLK_UP)
 		{
@@ -110,6 +105,33 @@ void Game::HandleEvents()
 			cout << "green: " << green << endl;
 			cout << "blue: " << blue << endl;
 		}
+		if (event.key.keysym.sym == SDLK_LEFT)
+		{
+			range--;
+			cout << "Range: " << range << endl;
+		}
+		if (event.key.keysym.sym == SDLK_RIGHT)
+		{
+			range++;
+			cout << "Range: " << range << endl;
+		}
+		if (event.key.keysym.sym == SDLK_q)
+		{
+			angleLighting -= 0.1;
+			if (angleLighting <= 0)
+			{
+				angleLighting = 0;
+			}
+		}
+		if (event.key.keysym.sym == SDLK_e)
+		{
+			angleLighting += 0.1;
+			if (angleLighting >= 2)
+			{
+				angleLighting = 2;
+			}
+
+		}
 	}
 	
 
@@ -120,24 +142,22 @@ void Game::Render()
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, backgroundTex, 0, 0);
 
-	light->CircleLight(renderer, &gameObjects[index],400);
+	light->CircleLight(renderer, &gameObjects[index],range,3);
 	light->LightSettings(testIntensity, red, green, blue);
 	light->Surface(backgroundTex);
 	light->Render(renderer, 200, 30, 100, 100);
 
-	lightNew->PointLight(renderer, &gameObjects[index], 500,0.2);
+	lightNew->PointLight(renderer, &gameObjects[index], 500,3,angleLighting);
 	lightNew->LightSettings(25, 255, 255, 255);
 	lightNew->Render(renderer, 0, 350, 100, 100);
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		SDL_RenderCopy(renderer, gameObjectTex, 0, &gameObjects[i]);
 	}
 	// clear the screen
 	gameObjects[0].x++;
 	gameObjects[1].y--;
-	
-	gameObjects[2].y++;
 	// flip the backbuffer
 	// this means that everything that we prepared behind the screens is actually shown
 	SDL_RenderPresent(renderer);
