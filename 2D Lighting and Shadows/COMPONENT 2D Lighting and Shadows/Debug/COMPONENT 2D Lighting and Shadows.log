@@ -1,10 +1,11 @@
-﻿  Lighting.cpp
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(39): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(48): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(38): warning C4101: 'fillRect': unreferenced local variable
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(64): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(72): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(73): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\gameuser\desktop\rwm3\2d lighting and shadows\2d lighting and shadows\lighting.cpp(63): warning C4101: 'fillRect': unreferenced local variable
-  COMPONENT 2D Lighting and Shadows.vcxproj -> C:\Users\gameuser\Desktop\RWM3\2D Lighting and Shadows\Debug\COMPONENT 2D Lighting and Shadows.lib
+﻿  stdafx.cpp
+  Lighting.cpp
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(40): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(48): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(49): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(39): warning C4101: 'fillRect': unreferenced local variable
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(65): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(73): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(74): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\gameuser\desktop\rwm3\2d lighting and shadows\component 2d lighting and shadows\lighting.cpp(64): warning C4101: 'fillRect': unreferenced local variable
+  Component 2D Lighting and Shadows.vcxproj -> C:\Users\gameuser\Desktop\RWM3\2D Lighting and Shadows\Debug\Component 2D Lighting and Shadows.lib

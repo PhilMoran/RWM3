@@ -19,6 +19,10 @@ public:
 	void Render();
 	void CleanUp();
 	int newR = 255;
+	int testIntensity = 25;
+	int red = 255;
+	int green = 255;
+	int blue = 255;
 	Lighting* light = new Lighting();
 	Lighting* lightNew = new Lighting();
 	bool IsRunning();

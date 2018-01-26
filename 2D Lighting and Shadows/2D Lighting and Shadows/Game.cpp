@@ -51,7 +51,67 @@ void Game::HandleEvents()
 		{
 			isRunning = false;
 		}
+		if (event.key.keysym.sym == SDLK_a)
+		{
+			gameObjects[3].x -= 2;
+		}
+		if (event.key.keysym.sym == SDLK_s)
+		{
+			gameObjects[3].y += 2;
+		}
+		if (event.key.keysym.sym == SDLK_d)
+		{
+			gameObjects[3].x += 2;
+		}
+		if (event.key.keysym.sym == SDLK_w)
+		{
+			gameObjects[3].y -= 2;
+		}
+		if (event.key.keysym.sym == SDLK_UP)
+		{
+			testIntensity += 1;
+			cout << "Intensity: " << testIntensity << endl;
+		}
+		if (event.key.keysym.sym == SDLK_DOWN)
+		{
+			testIntensity -= 1;
+			cout << "Intensity: " << testIntensity << endl;
+		}
+		if (event.key.keysym.sym == SDLK_r)
+		{
+			red += 1;
+			if (red >= 256)
+			{
+				red = 0;
+			}
+			cout << "red: " << red << endl;
+			cout << "green: " << green << endl;
+			cout << "blue: " << blue << endl;
+		}
+		if (event.key.keysym.sym == SDLK_g)
+		{
+			green += 1;
+			if (green >= 256)
+			{
+				green = 0;
+			}
+			cout << "red: " << red << endl;
+			cout << "green: " << green << endl;
+			cout << "blue: " << blue << endl;
+		}
+		if (event.key.keysym.sym == SDLK_b)
+		{
+			blue += 1;
+			if (blue >= 256)
+			{
+				blue = 0;
+			}
+			cout << "red: " << red << endl;
+			cout << "green: " << green << endl;
+			cout << "blue: " << blue << endl;
+		}
 	}
+	
 
 }
 
@@ -61,13 +121,13 @@ void Game::Render()
 	SDL_RenderCopy(renderer, backgroundTex, 0, 0);
 
 	light->CircleLight(renderer, &gameObjects[index],400);
-	light->LightSettings(25, 255, 255, 255);
+	light->LightSettings(testIntensity, red, green, blue);
 	light->Surface(backgroundTex);
 	light->Render(renderer, 200, 30, 100, 100);
 
 	lightNew->PointLight(renderer, &gameObjects[index], 500,0.2);
 	lightNew->LightSettings(25, 255, 255, 255);
-	lightNew->Render(renderer, 200, 30, 100, 100);
+	lightNew->Render(renderer, 0, 350, 100, 100);
 
 	for (int i = 0; i < 5; i++)
 	{

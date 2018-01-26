@@ -56,7 +56,6 @@ void Lighting::CircleLight(SDL_Renderer * render, SDL_Rect gameObjects[], int ra
 		}
 		SDL_RenderDrawLine(render, centreX, centreY, endX, endY);
 	}
-		std::cout << "Line " << lineDist << std::endl;
 }
 void Lighting::PointLight(SDL_Renderer * render, SDL_Rect gameObjects[], int range,double pointAngle)
 {
@@ -82,7 +81,6 @@ void Lighting::PointLight(SDL_Renderer * render, SDL_Rect gameObjects[], int ran
 		SDL_RenderDrawLine(render, centreX, centreY, endX, endY);
 
 	}
-	std::cout << "Line " << lineDist << std::endl;
 }
 	
 
